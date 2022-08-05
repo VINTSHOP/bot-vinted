@@ -1,0 +1,11 @@
+/*
+/*/
+!/src/
+!.env.example
+!.gitignore
+!.dockerignore
+!package.json
+!tsconfig.json
+!Dockerfile
+!README.md
+!.github

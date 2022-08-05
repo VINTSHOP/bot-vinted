@@ -1,0 +1,28 @@
+{
+  "name": "bot-vinted",
+  "description": "Bot Vinted pour Discord permettant d'afficher en temps réelles les nouvelles annonces.",
+  "version": "1.0.0",
+  "exports": "./src/app.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "nodemon --exec node -r dotenv/config --loader ts-node/esm/transpile-only src/app.ts",
+    "serve": "node -r dotenv/config dist/app.js"
+  },
+  "author": "ZyXProFR",
+  "repository": "https://github.com/bot-vinted/bot-vinted",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "dayjs": "^1.11.3",
+    "discord.js": "^14.0.2",
+    "dotenv": "^16.0.1",
+    "node-fetch": "^3.2.9"
+  }
+}
