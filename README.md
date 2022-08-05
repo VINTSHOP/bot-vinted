@@ -88,6 +88,8 @@ API.
 
 ![image de presentation](https://cdn.discordapp.com/attachments/993523996882636931/1005125666703937677/unknown.png)
 
+Pour créer un webhook, vous pouvez suivre le [guide](https://support.discord.com/hc/fr/articles/228383668-Introduction-aux-Webhooks) officiel de Discord.
+
 Et voilà ! Il ne vous reste plus qu’à patienter pour voir les premiers articles arriver.
 
 \
