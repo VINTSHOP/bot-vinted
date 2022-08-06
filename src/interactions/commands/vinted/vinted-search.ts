@@ -78,9 +78,13 @@ export default class VintedSearchCommand extends InteractionCommand {
     const options = interaction.options as CommandInteractionOptionResolver;
 
     if (options.getSubcommand() == "add") {
-      const lien = options.getString("lien");
+      let lien = options.getString("lien");
       const webhook_url = options.getString("webhook_url");
       const api_key = options.getString("api_key");
+
+      if (!lien?.includes("order=newest_first")) {
+        lien += "&&order=newest_first";
+      }
 
       const req = await fetch(`${process.env.API_URL}/subscriptions`, {
         method: "POST",
