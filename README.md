@@ -22,7 +22,7 @@
 
 ## :dart: A propos
 
-Bot Vinted pour Discord permettant d'afficher en temps réelles les nouvelles annonces.
+Bot Vinted pour Discord permettant d'afficher en temps réel les nouvelles annonces.
 
 ![imge de presentation](https://media.discordapp.net/attachments/991646012873646100/1005039093052350464/basicresell-bot-vinted-opensource.png?width=1193&height=671)
 
@@ -47,6 +47,8 @@ Avant de commencer 🏁, il faut avoir [Docker](https://www.docker.com) d'instal
 
 Démarrer l'image Docker en remplacant les valeurs des variables d'environnement :
 
+:warning: Ne modifier pas la variable d'environnement `API_URL` !
+
 ```bash
 $ docker run \
 --restart always \
@@ -57,6 +59,8 @@ $ docker run \
 -e TZ=Europe/Paris \
 ghcr.io/bot-vinted/bot-vinted:latest
 ```
+
+_(Si vous ne souhaitez pas installer le bot vous même, il existe une version déjà installée et configurée sur notre serveur Discord : https://discord.gg/ZMVJ2d5rTZ)._
 
 ## :hammer_and_pick: Utilisation du bot
 
