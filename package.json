@@ -1,6 +1,6 @@
 {
   "name": "bot-vinted",
-  "description": "Bot Vinted pour Discord permettant d'afficher en temps réelles les nouvelles annonces.",
+  "description": "Bot Vinted pour Discord permettant d'afficher en temps réel les nouvelles annonces.",
   "version": "1.1.0",
   "exports": "./src/app.ts",
   "type": "module",
