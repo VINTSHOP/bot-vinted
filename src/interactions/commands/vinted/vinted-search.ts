@@ -125,7 +125,7 @@ export default class VintedSearchCommand extends InteractionCommand {
         });
       }
     } else if (options.getSubcommand() == "remove") {
-      const id = options.getNumber("id");
+      const id = options.getInteger("id");
       const api_key = options.getString("api_key");
 
       const req = await fetch(`${process.env.API_URL}/subscriptions`, {
