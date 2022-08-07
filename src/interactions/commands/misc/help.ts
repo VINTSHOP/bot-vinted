@@ -19,7 +19,7 @@ export default class HelpCommand extends InteractionCommand {
       options: [
         {
           name: "commande",
-          description: "Commande pour laqulle vous voulez afficher l'aide.",
+          description: "Commande pour laquelle vous voulez afficher l'aide.",
           type: ApplicationCommandOptionType.String,
           required: false,
         },
@@ -46,7 +46,7 @@ export default class HelpCommand extends InteractionCommand {
           {
             name: "Liste des commandes",
             value:
-              "Pour plus d'information complémentaire, tapez `/help <command>`.",
+              "Pour plus d'informations complémentaires, tapez `/help <command>`.",
           },
         ])
         .setFooter({
