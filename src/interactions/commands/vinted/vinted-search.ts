@@ -83,7 +83,7 @@ export default class VintedSearchCommand extends InteractionCommand {
       const api_key = options.getString("api_key");
 
       if (!lien?.includes("order=newest_first")) {
-        lien += "&&order=newest_first";
+        lien += "&order=newest_first";
       }
 
       const req = await fetch(`${process.env.API_URL}/subscriptions`, {
