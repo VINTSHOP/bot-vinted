@@ -6,8 +6,8 @@ COPY package.json /app
 
 COPY . /app
 
-RUN npm install
+RUN yarn
 
-RUN npm run build
+RUN yarn build
 
-CMD npm run serve
+CMD yarn serve
