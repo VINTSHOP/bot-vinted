@@ -13,16 +13,16 @@
   "repository": "https://github.com/bot-vinted/bot-vinted",
   "private": false,
   "devDependencies": {
-    "@types/node": "^18.0.6",
+    "@types/node": "^18.6.4",
     "nodemon": "^2.0.19",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
   },
   "dependencies": {
     "chalk": "^5.0.1",
-    "dayjs": "^1.11.3",
-    "discord.js": "^14.0.2",
+    "dayjs": "^1.11.4",
+    "discord.js": "^14.1.2",
     "dotenv": "^16.0.1",
-    "node-fetch": "^3.2.9"
+    "node-fetch": "^3.2.10"
   }
 }
