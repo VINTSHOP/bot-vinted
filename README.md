@@ -41,7 +41,7 @@ Les outils suivants ont été utilisés dans ce projet :
 
 ## :white_check_mark: Conditions requises
 
-Avant de commencer 🏁, il faut avoir [Docker](https://www.docker.com) d'installé.
+Avant de commencer 🏁, il faut avoir [Docker](https://www.docker.com) d'installé et avoir rejoint notre serveur Discord : https://discord.gg/ZMVJ2d5rTZ.
 
 ## :checkered_flag: Commencer avec Docker
 
