@@ -13,7 +13,7 @@
   "repository": "https://github.com/bot-vinted/bot-vinted",
   "private": false,
   "devDependencies": {
-    "@types/node": "^18.6.4",
+    "@types/node": "^18.6.5",
     "nodemon": "^2.0.19",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
