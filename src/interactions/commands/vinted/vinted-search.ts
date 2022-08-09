@@ -79,7 +79,7 @@ export default class VintedSearchCommand extends InteractionCommand {
 
     if (options.getSubcommand() == "add") {
       let lien = options.getString("lien");
-      const webhook_url = options.getString("webhook_url");
+      const webhook_url = options.getString("webhook_url")?.replace("ptb.", "");
       const api_key = options.getString("api_key");
 
       if (!lien?.includes("order=newest_first")) {
