@@ -12,6 +12,7 @@
   "author": "ZyXProFR",
   "repository": "https://github.com/bot-vinted/bot-vinted",
   "private": false,
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.6.5",
     "nodemon": "^2.0.19",
