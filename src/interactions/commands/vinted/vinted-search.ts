@@ -17,6 +17,8 @@ export default class VintedSearchCommand extends InteractionCommand {
       name: "vinted-search",
       description: "Gérer les recherches vinted.",
       category: "👕 Vinted",
+      usage:
+        "/vinted-search add <lien_recherche> <lien_webhook> <clé_api>\n\n/vinted-search remove <id_recherche> <clé_api>",
       options: [
         {
           name: "add",
