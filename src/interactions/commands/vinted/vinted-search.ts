@@ -118,6 +118,11 @@ export default class VintedSearchCommand extends InteractionCommand {
             "La clé API que vous avez indiquée est incorrect.\n\nPour obtenir une clé rendez-vous sur https://discord.gg/StAPyC4r3g.",
           ephemeral: true,
         });
+      } else if (res.message == "Limite de recherches atteinte.") {
+        interaction.reply({
+          content: `Vous avez atteint votre limite de recherche`,
+          ephemeral: true,
+        });
       } else if (res.message == "Votre abonnement a été ajouté.") {
         interaction.reply({
           content: `La recherche a bien été ajoutée (**ID: ${res.search_id}**).\n\n(Garder l'ID dans un coin, il vous servira pour supprimer la recherche.)`,
