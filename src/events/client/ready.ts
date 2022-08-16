@@ -66,31 +66,42 @@ export default class ReadyEvent extends BotEvent {
         if (process.env.SUPER_SECRET_KEY) {
           try {
             const req = await fetch(
-              `${process.env.API_URL}/subscriptions?apiKey=${process.env.SUPER_SECRET_KEY}`
+              `${process.env.API_URL}/stats?apiKey=${process.env.SUPER_SECRET_KEY}`
             );
 
             const res = (await req.json()) as {
               message: string;
               total_search: number;
+              total_product_found: number;
             };
 
             const total_search = res.total_search;
+            const total_product_found = res.total_product_found;
 
             if (total_search) {
               message = `${total_search} recherches`;
             }
+
+            this.client?.user?.setActivity({
+              name: message,
+              type: ActivityType.Watching,
+            });
+
+            await sleep(7000);
+
+            message = `${total_product_found} produits trouvés`;
+            this.client?.user?.setActivity({
+              name: message,
+              type: ActivityType.Watching,
+            });
+
+            await sleep(7000);
           } catch (err) {
             if (err instanceof Error) {
               Logger.Error(err.message);
             }
           }
         }
-
-        this.client?.user?.setActivity({
-          name: message,
-          type: ActivityType.Watching,
-        });
-        await sleep(7000);
       }
     }, 1);
   }
