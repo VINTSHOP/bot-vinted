@@ -202,19 +202,42 @@ export default class VintedSearchCommand extends InteractionCommand {
           ephemeral: true,
         });
       } else {
-        let message = `Vous avez **${res.total_search} ${
-          res.searches!.length > 0 ? "recherches" : "recherche"
-        }** actives:\n\n`;
+        let message = "";
 
-        res.searches?.forEach((search) => {
-          message += `[ID: ${search.id}](${search.search_link})\n`;
-        });
-
-        const eb = new EmbedBuilder()
+        let eb = new EmbedBuilder()
+          .setTitle("Liste des recherches")
           .setColor("Random")
-          .setDescription(message);
+          .setTimestamp(new Date())
+          .setFooter({
+            text: client.user?.username as string,
+            iconURL: client.user?.avatarURL() as string,
+          });
 
-        interaction.reply({ embeds: [eb], ephemeral: true });
+        for (const search of res.searches!) {
+          if (message.length < 3500) {
+            message += `[ID: ${search.id}](${search.search_link})\n`;
+          }
+
+          if (message.length >= 3500) {
+            eb.setDescription(message);
+            message = "";
+            await interaction.user.send({ embeds: [eb] });
+          }
+        }
+
+        if (message.length > 0) {
+          eb.setDescription(message);
+          interaction.user.send({ embeds: [eb] });
+        }
+
+        return interaction.reply({
+          content: `${
+            res.searches!.length > 1
+              ? `${res.searches!.length} recherches trouvées`
+              : `${res.searches!.length} recherche trouvée`
+          }.\n\nLa liste des recherches va vous être envoyée en message privé.`,
+          ephemeral: true,
+        });
       }
     }
   }
