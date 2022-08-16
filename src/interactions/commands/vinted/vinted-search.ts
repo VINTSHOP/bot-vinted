@@ -66,6 +66,20 @@ export default class VintedSearchCommand extends InteractionCommand {
             },
           ],
         },
+        {
+          name: "list",
+          description: "Avoir la liste de vos recherches.",
+          type: ApplicationCommandOptionType.Subcommand,
+          options: [
+            {
+              name: "api_key",
+              description:
+                "Clé API (Si vous ne la possédez pas, il faut rejoindre le Discord de Basic Resell pour la générer).",
+              type: ApplicationCommandOptionType.String,
+              required: true,
+            },
+          ],
+        },
       ],
     });
   }
@@ -167,6 +181,40 @@ export default class VintedSearchCommand extends InteractionCommand {
             "Une erreur est survenue, merci de contacter un administrateur sur https://discord.gg/StAPyC4r3g.",
           ephemeral: true,
         });
+      }
+    } else if (options.getSubcommand() == "list") {
+      const api_key = options.getString("api_key");
+
+      const req = await fetch(
+        `${process.env.API_URL}/subscriptions?apiKey=${api_key}`
+      );
+
+      const res = (await req.json()) as {
+        message: string;
+        total_search?: number;
+        searches?: { id: number; search_link: string }[];
+      };
+
+      if (res.message == "Une erreur est survenue.") {
+        interaction.reply({
+          content:
+            "Une erreur est survenue, merci de contacter un administrateur sur https://discord.gg/StAPyC4r3g.",
+          ephemeral: true,
+        });
+      } else {
+        let message = `Vous avez **${res.total_search} ${
+          res.searches!.length > 0 ? "recherches" : "recherche"
+        }** actives:\n\n`;
+
+        res.searches?.forEach((search) => {
+          message += `[ID: ${search.id}](${search.search_link})\n`;
+        });
+
+        const eb = new EmbedBuilder()
+          .setColor("Random")
+          .setDescription(message);
+
+        interaction.reply({ embeds: [eb], ephemeral: true });
       }
     }
   }
