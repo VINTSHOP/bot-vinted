@@ -60,7 +60,7 @@ $ docker run \
 ghcr.io/bot-vinted/bot-vinted:latest
 ```
 
-_(Si vous ne souhaitez pas installer le bot vous même, il existe une version déjà installée et configurée sur notre serveur Discord : https://discord.gg/ZMVJ2d5rTZ)._
+_(Si vous ne souhaitez pas installer le bot vous même, il existe une version déjà installée et configurée sur notre serveur Discord : https://discord.gg/KC9p9uKBZu)._
 
 ## :hammer_and_pick: Utilisation du bot
 
